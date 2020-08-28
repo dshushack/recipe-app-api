@@ -1,0 +1,34 @@
+# The docker-compose is a tooll that allows us to run our docker image
+# easily from our project location.  It allows us to manage the diffent
+# services that make up our project (ie. app, db, etc.)
+
+# version of docker compose
+version: "3"
+
+# define our application service.  Specify that it should build
+# from the current app directory
+services:
+  app:
+    build:
+      context: .
+
+    # map the ports on our local pc to the docker image ports
+    ports:
+      - "8000:8000"
+
+    # a volume allows us to get the updates we make in our project
+    # into the container in real time (without having to recreate the image)
+    # This maps a folder on our local PC to a folder in the docker container
+    # running our application.
+    volumes:
+      - .app:/app
+
+    # define the command to run the app in the docker container
+    # we will run the django dev server using any ip address in
+    # the docker container.  sh -c  (shell command)
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+
+    # the last step is to build our docker image with the
+    # new specifiations in the terminal window using the command:
+    #     docker-compose build
