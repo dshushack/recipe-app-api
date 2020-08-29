@@ -21,7 +21,7 @@ services:
     # This maps a folder on our local PC to a folder in the docker container
     # running our application.
     volumes:
-      - ./mysite:/mysite
+      - ./app:/app
 
     # define the command to run the app in the docker container
     # we will run the django dev server using any ip address in

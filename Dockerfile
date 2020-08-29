@@ -14,14 +14,15 @@ COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
 # Create a new app folder on our docker image
-RUN mkdir /mysite
+RUN mkdir /app
 
 # Make this the working directory
-WORKDIR /mysite
+WORKDIR /app
 
 # Copy all files from our project app folder to the app folder on the
 # Docker image
-COPY ./mysite /mysite
+COPY ./app /app
+COPY ./app /app
 
 # Create a user to run the appliation only (cannot log on w. this account)
 # This ensures that we will not be using the root user to run the application
