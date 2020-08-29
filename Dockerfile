@@ -21,7 +21,7 @@ WORKDIR /mysite
 
 # Copy all files from our project app folder to the app folder on the
 # Docker image
-COPY ./mysite /app
+COPY ./mysite /mysite
 
 # Create a user to run the appliation only (cannot log on w. this account)
 # This ensures that we will not be using the root user to run the application
