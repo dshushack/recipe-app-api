@@ -1,0 +1,24 @@
+# This is the configuration file for Travis-CI
+
+# Use python to execute our Travis CI scripts
+language:
+  - python
+
+# Indicate the version of Python Travis CI will use
+python:
+  - 3.6
+
+# Indicate what services Travis-CI will need (the rest of the services
+# will be pulled in within docker via the docker-compose.yml file
+services:
+  - docker
+
+# run this script before we start the Travis-CI verification
+before_script:
+  - pip install docker-compose
+
+# run this script to execute our application tests (and linting too flake8)
+# Linting highlights syntactical and stylistic problems in your Python source code,
+# which helps you identify and correct subtle programming errors
+script:
+  - docker-compose run app sh -c "python manage.py test && flake8"

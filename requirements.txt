@@ -1,5 +1,8 @@
 # Install Django 3.1 and all patch releases (3.1.x)
-Django>=3.1,<3.2
+Django>=3.1.0,<3.2.0
 
 # Django Rest Framework v3.11.x
-djangorestframework>=3.11.1,<3.12
+djangorestframework>=3.11.1,<3.12.0
+
+# Python code linting tool
+flake8=3.8.3,<3.9.0

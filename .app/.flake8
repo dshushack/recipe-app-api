@@ -1,0 +1,9 @@
+# flake8 code linting tool configuration file
+
+# identify the files to ignore in tle linting process
+[flake8]
+exclude =
+  migrations,
+  __pycache__
+  manage.py,
+  settings.py
