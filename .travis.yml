@@ -1,5 +1,5 @@
 # This is the configuration file for Travis-CI
-# Note: you must be using a public github repository
+# Note: you must be using a public github repository otherwise Travis will not work
 
 # Use python to execute our Travis CI scripts
 language:
