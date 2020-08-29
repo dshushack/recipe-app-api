@@ -15,8 +15,7 @@ services:
   - docker
 
 # run this script before we start the Travis-CI verification
-before_script:
-  - pip install docker-compose
+before_script: pip install docker-compose
 
 # run this script to execute our application tests (and linting too flake8)
 # Linting highlights syntactical and stylistic problems in your Python source code,
